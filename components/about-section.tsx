@@ -25,7 +25,7 @@ export default function AboutSection() {
               About Us
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Crafting Excellence in Metal Fabrication Since 2005
+              Crafting Excellence in Metal Fabrication Since 2003
             </h2>
             <p className="text-lg text-gray-700">
               At RKS Fabricators, we combine traditional craftsmanship with modern technology to deliver superior metal

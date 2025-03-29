@@ -54,9 +54,7 @@ export default function ProductsSection() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.title}</h3>
                 <p className="text-gray-700 mb-4">{product.description}</p>
-                <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-800">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                
               </div>
             </div>
           ))}

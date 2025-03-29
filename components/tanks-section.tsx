@@ -248,24 +248,23 @@ export default function TanksSection() {
   }
 
   const handleTouchMove = (e: TouchEvent) => {
+    if (!touchStartX.current) return
+
     touchEndX.current = e.touches[0].clientX
+
+    // Get the horizontal distance moved
+    const diffX = touchStartX.current - e.touches[0].clientX
+
+    // Only prevent default if it's a significant horizontal swipe
+    // This allows vertical scrolling to work normally
+    if (Math.abs(diffX) > 10) {
+      // Prevent default only for horizontal swipes
+      e.preventDefault()
+    }
   }
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
+  const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return
-
-    // Get the element that was touched
-    const target = e.target as HTMLElement
-
-    // Check if we're inside a scrollable tab content
-    const isInTabContent = target.closest(".tabs-content") !== null
-
-    // If we're in tab content, allow normal scrolling behavior
-    if (isInTabContent) {
-      touchStartX.current = null
-      touchEndX.current = null
-      return
-    }
 
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
@@ -282,9 +281,10 @@ export default function TanksSection() {
     touchStartX.current = null
     touchEndX.current = null
   }
+
   const { toast } = useToast()
 
-  // Handle request quote functionality for tank items
+  // Enhance the request quote functionality for equipment items
   const handleQuoteRequest = (itemName: string) => {
     const quoteRequest = {
       to: ["rajnikantsharma@rksfabricatorsco.in", "rksfabricators@gmail.com"],
@@ -296,33 +296,23 @@ export default function TanksSection() {
       `,
     }
 
-    // In a real implementation, this would send an email
-    // For now, we'll just show a toast notification
     console.log("Quote request would be sent to:", quoteRequest.to)
     console.log("Quote request content:", quoteRequest.body)
 
-    // Create a mailto link
-    const mailtoLink = `mailto:${quoteRequest.to.join(",")}?subject=${encodeURIComponent(quoteRequest.subject)}&body=${encodeURIComponent(quoteRequest.body)}`
-
-    // Open the email client
-    window.open(mailtoLink, "_blank")
-
     toast({
-      title: "Quote Request Initiated",
-      description: `Your request for ${itemName} has been prepared for rajnikantsharma@rksfabricatorsco.in and rksfabricators@gmail.com`,
+      title: "Quote Request Sent",
+      description: `Your request for ${itemName} has been sent to rajnikantsharma@rksfabricatorsco.in and rksfabricators@gmail.com`,
     })
   }
 
   return (
-    <section className="py-12 md:py-20 bg-white" id="tanks-section">
+    <section className="py-12 md:py-20 bg-white" id="pharmaceuticals-equipments">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Pharmaceutical Tanks & Processing Equipment
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pharmaceuticals Equipments</h2>
           <p className="text-lg text-gray-700">
-            Our range of high-quality tanks and processing equipment is designed to meet the most demanding requirements
-            of pharmaceutical manufacturing, ensuring product integrity and regulatory compliance.
+            We design and manufacture high-quality clean room and pharmaceutical equipment that meets the most stringent
+            industry standards and regulatory requirements.
           </p>
         </div>
 
@@ -332,6 +322,7 @@ export default function TanksSection() {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            style={{ touchAction: "pan-y" }}
           >
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -342,8 +333,8 @@ export default function TanksSection() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden border">
                       <Image
-                        src={item.image || "/placeholder.svg?height=400&width=600"}
-                        alt={`${item.name} - RKS Fabricators high-quality pharmaceutical tank`}
+                        src={item.image || "/placeholder.svg"}
+                        alt={`${item.name} - RKS Fabricators high-quality pharmaceutical equipment`}
                         fill
                         className="object-contain p-4"
                       />
@@ -357,7 +348,7 @@ export default function TanksSection() {
                           <TabsTrigger value="features">Features</TabsTrigger>
                           <TabsTrigger value="specifications">Specifications</TabsTrigger>
                         </TabsList>
-                        <TabsContent value="features" className="mt-4 tabs-content">
+                        <TabsContent value="features" className="mt-4">
                           <Card>
                             <CardContent className="pt-6">
                               <ul className="space-y-2">
@@ -371,7 +362,7 @@ export default function TanksSection() {
                             </CardContent>
                           </Card>
                         </TabsContent>
-                        <TabsContent value="specifications" className="mt-4 tabs-content">
+                        <TabsContent value="specifications" className="mt-4">
                           <Card>
                             <CardContent className="pt-6">
                               <div className="grid gap-2">
