@@ -551,8 +551,8 @@ export default function MainNav() {
               </Link>
               <div className="flex items-center gap-2 mt-4">
                 <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+919876543210" className="text-lg font-semibold text-primary">
-                  +91 98765 43210
+                <a href="tel:+919816273955" className="text-lg font-semibold text-primary">
+                  +91 98162 73955
                 </a>
               </div>
             </nav>
@@ -564,7 +564,7 @@ export default function MainNav() {
         <div className="hidden md:flex flex-col items-end">
           <span className="text-xs text-muted-foreground">Call</span>
           <a href="tel:+919876543210" className="text-xs font-semibold text-primary">
-            +91 98765 43210
+            +91 98162 73955
           </a>
         </div>
         <a

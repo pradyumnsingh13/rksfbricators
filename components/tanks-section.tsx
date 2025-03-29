@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useRef, type TouchEvent } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -136,7 +138,7 @@ export default function TanksSection() {
         { label: "Instrumentation", value: "Comprehensive PAT integration" },
         { label: "Compliance", value: "cGMP, ASME BPE, FDA, EU GMP, GAMP 5" },
       ],
-      image: "/tanks/manufacturingtank4.jpeg",
+      image: "/tanks/manufacturimgtank4.jpeg",
     },
     {
       id: "soft-gelating-tank",
@@ -159,7 +161,7 @@ export default function TanksSection() {
         { label: "Vacuum System", value: "Down to 50 mbar absolute" },
         { label: "Control Features", value: "Automated recipe control with data logging" },
       ],
-      image: "/tanks/softgelatingtank.webp",
+      image: "/tanks/softgelatinetank.webp",
     },
     {
       id: "wfi-jacketed-tank",
@@ -251,23 +253,23 @@ export default function TanksSection() {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStartX.current || !touchEndX.current) return
-    
+
     // Get the element that was touched
     const target = e.target as HTMLElement
-    
+
     // Check if we're inside a scrollable tab content
-    const isInTabContent = target.closest('.tab-content') !== null
-    
+    const isInTabContent = target.closest(".tabs-content") !== null
+
     // If we're in tab content, allow normal scrolling behavior
     if (isInTabContent) {
       touchStartX.current = null
       touchEndX.current = null
       return
     }
-    
+
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
-    
+
     if (difference > minSwipeDistance) {
       // Swipe left, go to next slide
       nextSlide()
@@ -275,7 +277,7 @@ export default function TanksSection() {
       // Swipe right, go to previous slide
       prevSlide()
     }
-    
+
     // Reset touch positions
     touchStartX.current = null
     touchEndX.current = null
@@ -355,7 +357,7 @@ export default function TanksSection() {
                           <TabsTrigger value="features">Features</TabsTrigger>
                           <TabsTrigger value="specifications">Specifications</TabsTrigger>
                         </TabsList>
-                        <TabsContent value="features" className="mt-4">
+                        <TabsContent value="features" className="mt-4 tabs-content">
                           <Card>
                             <CardContent className="pt-6">
                               <ul className="space-y-2">
@@ -369,7 +371,7 @@ export default function TanksSection() {
                             </CardContent>
                           </Card>
                         </TabsContent>
-                        <TabsContent value="specifications" className="mt-4">
+                        <TabsContent value="specifications" className="mt-4 tabs-content">
                           <Card>
                             <CardContent className="pt-6">
                               <div className="grid gap-2">

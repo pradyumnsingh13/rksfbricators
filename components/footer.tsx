@@ -109,11 +109,23 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
                 <span className="text-blue-200">Plot No.136-B,EPIP,Phase-1,Jharmajri,Baddi,H.P.</span>
+
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                <span className="text-blue-200">Plot No. 164,HPSIDC Industrial Area,Baddi,H.P.</span>
+
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-green-400 flex-shrink-0" />
-                <a href="tel:+919876543210" className="text-blue-200 hover:text-white transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919816273955" className="text-blue-200 hover:text-white transition-colors">
+                  +91 98162 73955
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-green-400 flex-shrink-0" />
+                <a href="tel:+918091898002" className="text-blue-200 hover:text-white transition-colors">
+                  +91 80918 98002
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -124,6 +136,19 @@ export default function Footer() {
                 >
                   rajnikantsharma@rksfabricatorsco.in
                 </a>
+                
+                
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-green-400 flex-shrink-0" />
+                <a
+                  href="mailto:shrikantsharma@rksfabricatorsco.in"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  shrikantsharma@rksfabricatorsco.in
+                </a>
+                
+                
               </li>
             </ul>
           </div>
@@ -136,12 +161,7 @@ export default function Footer() {
             © {new Date().getFullYear()} RKS Fabricators. All rights reserved. GST No: 02AZFPS6624Q1ZU
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="text-blue-200 hover:text-white text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="text-blue-200 hover:text-white text-sm transition-colors">
-              Terms of Service
-            </Link>
+            
           </div>
         </div>
       </div>

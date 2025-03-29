@@ -21,7 +21,7 @@ export default function Home() {
             <span>GST No: 02AZFPS6624Q1ZU</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="mailto:info@rksfabricators.com" className="hover:text-blue-200 transition-colors">
+            <a href="mailto:rajnikantsharma@rksfabricatorsco.in" className="hover:text-blue-200 transition-colors">
               rajnikantsharma@rksfabricatorsco.in
             </a>
             <a href="tel:+919876543210" className="hover:text-blue-200 transition-colors">

@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useRef, type TouchEvent } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -345,7 +347,6 @@ export default function EquipmentSection() {
       ],
       image: "/equipment/autoclave.webp",
     },
-    
   ]
 
   const nextSlide = () => {
@@ -367,23 +368,23 @@ export default function EquipmentSection() {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStartX.current || !touchEndX.current) return
-    
+
     // Get the element that was touched
     const target = e.target as HTMLElement
-    
+
     // Check if we're inside a scrollable tab content
-    const isInTabContent = target.closest('.tab-content') !== null
-    
+    const isInTabContent = target.closest(".tabs-content") !== null
+
     // If we're in tab content, allow normal scrolling behavior
     if (isInTabContent) {
       touchStartX.current = null
       touchEndX.current = null
       return
     }
-    
+
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
-    
+
     if (difference > minSwipeDistance) {
       // Swipe left, go to next slide
       nextSlide()
@@ -391,7 +392,7 @@ export default function EquipmentSection() {
       // Swipe right, go to previous slide
       prevSlide()
     }
-    
+
     // Reset touch positions
     touchStartX.current = null
     touchEndX.current = null
@@ -462,7 +463,7 @@ export default function EquipmentSection() {
                           <TabsTrigger value="features">Features</TabsTrigger>
                           <TabsTrigger value="specifications">Specifications</TabsTrigger>
                         </TabsList>
-                        <TabsContent value="features" className="mt-4">
+                        <TabsContent value="features" className="mt-4 tabs-content">
                           <Card>
                             <CardContent className="pt-6">
                               <ul className="space-y-2">
@@ -476,7 +477,7 @@ export default function EquipmentSection() {
                             </CardContent>
                           </Card>
                         </TabsContent>
-                        <TabsContent value="specifications" className="mt-4">
+                        <TabsContent value="specifications" className="mt-4 tabs-content">
                           <Card>
                             <CardContent className="pt-6">
                               <div className="grid gap-2">

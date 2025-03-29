@@ -9,13 +9,18 @@ export default function ClientsSection() {
     { name: "Cipla", logo: "/clients/cipla.jpeg" },
     { name: "Acme", logo: "/clients/acme.png" },
     { name: "Unichem", logo: "/clients/unichem.png" },
-    { name: "Unilever", logo: "/clients/Unilever.png" },
+    { name: "Allrite Pharma", logo: "/clients/allrite.jpg" },
     { name: "Venus", logo: "/clients/venus.png" },
     { name: "Dabur", logo: "/clients/dabur.jpeg" },
     { name: "Ranbaxy", logo: "/clients/sunpharma.jpeg" },
     { name: "Wipro", logo: "/clients/wipro.webp" },
     { name: "Torrent Pharma", logo: "/clients/torrent.png" },
     { name: "Panacea Biotec", logo: "/clients/panacea.png" },
+    { name: "DP Chocolates", logo: "/clients/dpchocolates.jpg" },
+    { name: "Johnson Johnson", logo: "/clients/johnson.png" },
+    { name: "Theon Pharmaceuticals", logo: "/clients/theon.jpeg" },
+
+
   ]
 
   const scrollRef = useRef<HTMLDivElement>(null)
