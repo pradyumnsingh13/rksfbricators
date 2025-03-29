@@ -359,53 +359,31 @@ export default function EquipmentSection() {
 
   // Touch event handlers for swipe functionality
   const handleTouchStart = (e: TouchEvent) => {
-    // Store the initial touch position
     touchStartX.current = e.touches[0].clientX
-    isSwiping.current = false
   }
 
   const handleTouchMove = (e: TouchEvent) => {
-    // Store the current touch position
+    if (!touchStartX.current) return
+
     touchEndX.current = e.touches[0].clientX
-    
-    // Check if we're in a tab content area
-    const target = e.target as HTMLElement
-    const tabContent = findParentWithClass(target, 'overflow-auto')
-    
-    // If we're in tab content and scrolling vertically, don't interfere
-    if (tabContent) {
-      // Don't do anything - let the browser handle the scroll
-      return
-    }
-    
-    // Otherwise, we're swiping horizontally
-    isSwiping.current = true
-    
-    // Prevent default to avoid page scrolling while swiping
-    if (Math.abs((touchStartX.current || 0) - (touchEndX.current || 0)) > 10) {
+
+    // Get the horizontal distance moved
+    const diffX = touchStartX.current - e.touches[0].clientX
+
+    // Only prevent default if it's a significant horizontal swipe
+    // This allows vertical scrolling to work normally
+    if (Math.abs(diffX) > 10) {
+      // Prevent default only for horizontal swipes
       e.preventDefault()
     }
   }
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
+  const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return
-    
-    // Get the element that was touched
-    const target = e.target as HTMLElement
-    
-    // Check if we're inside a scrollable tab content
-    const tabContent = findParentWithClass(target, 'overflow-auto')
-    
-    // If we're in tab content, don't trigger swipe
-    if (tabContent || !isSwiping.current) {
-      touchStartX.current = null
-      touchEndX.current = null
-      return
-    }
-    
+
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
-    
+
     if (difference > minSwipeDistance) {
       // Swipe left, go to next slide
       nextSlide()
@@ -413,23 +391,10 @@ export default function EquipmentSection() {
       // Swipe right, go to previous slide
       prevSlide()
     }
-    
+
     // Reset touch positions
     touchStartX.current = null
     touchEndX.current = null
-    isSwiping.current = false
-  }
-  
-  // Helper function to find parent with a specific class
-  const findParentWithClass = (element: HTMLElement | null, className: string): HTMLElement | null => {
-    let currentElement = element
-    while (currentElement) {
-      if (currentElement.classList && currentElement.classList.contains(className)) {
-        return currentElement
-      }
-      currentElement = currentElement.parentElement
-    }
-    return null
   }
 
   const { toast } = useToast()
@@ -472,6 +437,7 @@ export default function EquipmentSection() {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            style={{ touchAction: "pan-y" }}
           >
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -497,7 +463,7 @@ export default function EquipmentSection() {
                           <TabsTrigger value="features">Features</TabsTrigger>
                           <TabsTrigger value="specifications">Specifications</TabsTrigger>
                         </TabsList>
-                        <TabsContent value="features" className="mt-4 overflow-auto max-h-[300px]">
+                        <TabsContent value="features" className="mt-4">
                           <Card>
                             <CardContent className="pt-6">
                               <ul className="space-y-2">
@@ -511,7 +477,7 @@ export default function EquipmentSection() {
                             </CardContent>
                           </Card>
                         </TabsContent>
-                        <TabsContent value="specifications" className="mt-4 overflow-auto max-h-[300px]">
+                        <TabsContent value="specifications" className="mt-4">
                           <Card>
                             <CardContent className="pt-6">
                               <div className="grid gap-2">
