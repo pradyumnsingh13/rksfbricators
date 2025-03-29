@@ -1,13 +1,11 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useRef, type TouchEvent } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 
 type FurnitureItem = {
@@ -24,6 +22,7 @@ export default function FurnitureItemsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const touchStartX = useRef<number | null>(null)
   const touchEndX = useRef<number | null>(null)
+  const isSwiping = useRef(false)
 
   const handleRequestQuote = (itemName: string) => {
     // In a real implementation, this would open a form or send an email
@@ -195,7 +194,7 @@ export default function FurnitureItemsSection() {
       ],
       image: "/furniture/computertable.jpg",
     },
-
+    
     {
       id: "powder-sampler",
       name: "Powder Sampler",
@@ -219,7 +218,7 @@ export default function FurnitureItemsSection() {
       ],
       image: "/furniture/powder-sampler.jpg",
     },
-
+    
     {
       id: "step-ladder",
       name: "Step Ladder",
@@ -300,7 +299,7 @@ export default function FurnitureItemsSection() {
         "Lockable doors for security",
         "Smooth surface finish for easy cleaning",
         "Customizable dimensions available",
-        "Ventilated design for air circulation",
+        "Ventilated design for air circulation"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
@@ -308,9 +307,9 @@ export default function FurnitureItemsSection() {
         { label: "Finish", value: "Matt / Mirror finish" },
         { label: "Doors", value: "Hinged or sliding with lock" },
         { label: "Usage", value: "Pharmaceutical, Industrial, Laboratory" },
-        { label: "Shelves", value: "Adjustable or fixed" },
+        { label: "Shelves", value: "Adjustable or fixed" }
       ],
-      image: "/furniture/almirah.jpg",
+      image: "/furniture/almirah.jpg"
     },
     {
       id: "cagetrolley",
@@ -323,7 +322,7 @@ export default function FurnitureItemsSection() {
         "Wire mesh design for ventilation and visibility",
         "Secure locking mechanism for safety",
         "Customizable sizes available",
-        "Easy to clean and maintain",
+        "Easy to clean and maintain"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
@@ -331,9 +330,9 @@ export default function FurnitureItemsSection() {
         { label: "Finish", value: "Matt / Mirror finish" },
         { label: "Wheels", value: "Swivel castor wheels with brakes" },
         { label: "Capacity", value: "Varies based on size and requirement" },
-        { label: "Usage", value: "Pharmaceutical, Industrial, Laboratory" },
+        { label: "Usage", value: "Pharmaceutical, Industrial, Laboratory" }
       ],
-      image: "/furniture/cagetrolley.jpg",
+      image: "/furniture/cagetrolley.jpg"
     },
     {
       id: "chair",
@@ -346,7 +345,7 @@ export default function FurnitureItemsSection() {
         "Rust and corrosion-resistant finish",
         "Easy to clean and maintain",
         "Available with or without backrest",
-        "Non-slip rubber feet for stability",
+        "Non-slip rubber feet for stability"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
@@ -354,9 +353,9 @@ export default function FurnitureItemsSection() {
         { label: "Seat Type", value: "Flat / Perforated" },
         { label: "Backrest", value: "Available with or without backrest" },
         { label: "Height", value: "Standard or customized" },
-        { label: "Usage", value: "Pharmaceutical, Industrial, Cleanroom" },
+        { label: "Usage", value: "Pharmaceutical, Industrial, Cleanroom" }
       ],
-      image: "/furniture/chair.jpg",
+      image: "/furniture/chair.jpg"
     },
     {
       id: "diepunchcabinet",
@@ -369,7 +368,7 @@ export default function FurnitureItemsSection() {
         "Lockable design for enhanced security",
         "Smooth sliding mechanism for easy access",
         "Corrosion-resistant and easy to clean",
-        "Customizable drawer sizes and configurations",
+        "Customizable drawer sizes and configurations"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
@@ -377,9 +376,9 @@ export default function FurnitureItemsSection() {
         { label: "Drawer Type", value: "Sliding with lock option" },
         { label: "Capacity", value: "Customized as per requirement" },
         { label: "Usage", value: "Pharmaceutical, Industrial" },
-        { label: "Dimensions", value: "Standard or customized" },
+        { label: "Dimensions", value: "Standard or customized" }
       ],
-      image: "/furniture/diepunchcabinet.webp",
+      image: "/furniture/diepunchcabinet.webp"
     },
     {
       id: "dustbin",
@@ -392,7 +391,7 @@ export default function FurnitureItemsSection() {
         "Available with pedal or open-top design",
         "Lid options for odor control",
         "Customizable sizes and capacities",
-        "Suitable for pharmaceutical and cleanroom environments",
+        "Suitable for pharmaceutical and cleanroom environments"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
@@ -400,9 +399,9 @@ export default function FurnitureItemsSection() {
         { label: "Design", value: "Open-top, pedal-operated, or swing lid" },
         { label: "Finish", value: "Matt / Mirror finish" },
         { label: "Usage", value: "Pharmaceutical, Industrial, Commercial" },
-        { label: "Dimensions", value: "Standard or customized" },
+        { label: "Dimensions", value: "Standard or customized" }
       ],
-      image: "/furniture/foodoperateddustbin.jpg",
+      image: "/furniture/foodoperateddustbin.jpg"
     },
     {
       id: "IPC",
@@ -415,7 +414,7 @@ export default function FurnitureItemsSection() {
         "Available in various capacities to suit process requirements",
         "Hermetically sealed to prevent contamination",
         "Ergonomic design with easy handling and mobility",
-        "Customizable discharge valve options",
+        "Customizable discharge valve options"
       ],
       specifications: [
         { label: "Material", value: "SS 316L with mirror/matt finish" },
@@ -423,9 +422,9 @@ export default function FurnitureItemsSection() {
         { label: "Surface Finish", value: "Electropolished or mirror finish" },
         { label: "Mobility", value: "Equipped with caster wheels for easy transport" },
         { label: "Sealing", value: "Gasket-sealed lid for contamination prevention" },
-        { label: "Applications", value: "Pharmaceutical, Chemical, Food industries" },
+        { label: "Applications", value: "Pharmaceutical, Chemical, Food industries" }
       ],
-      image: "/furniture/IPC.webp",
+      image: "/furniture/IPC.webp"
     },
     {
       id: "linentrolley",
@@ -438,16 +437,16 @@ export default function FurnitureItemsSection() {
         "Lightweight and sturdy design for easy maneuverability",
         "Fitted with durable caster wheels for smooth movement",
         "Available with or without a lid for different applications",
-        "Customizable sizes to meet specific requirements",
+        "Customizable sizes to meet specific requirements"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316 with polished finish" },
         { label: "Capacity", value: "50L to 500L" },
         { label: "Wheels", value: "Heavy-duty swivel caster wheels with brakes" },
         { label: "Structure", value: "Tubular frame with reinforced bottom" },
-        { label: "Applications", value: "Pharmaceutical, Healthcare, Industrial use" },
+        { label: "Applications", value: "Pharmaceutical, Healthcare, Industrial use" }
       ],
-      image: "/furniture/linentrolley.jpg",
+      image: "/furniture/linentrolley.jpg"
     },
     {
       id: "mug",
@@ -460,16 +459,16 @@ export default function FurnitureItemsSection() {
         "Available in various sizes to suit different applications",
         "Ergonomic handle for a comfortable grip",
         "Polished mirror or matte finish options",
-        "Suitable for use in cleanroom environments",
+        "Suitable for use in cleanroom environments"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Capacity", value: "250ml to 2L" },
         { label: "Finish", value: "Mirror or matte polish" },
         { label: "Handle", value: "Ergonomic stainless steel handle" },
-        { label: "Applications", value: "Pharmaceutical, laboratory, industrial use" },
+        { label: "Applications", value: "Pharmaceutical, laboratory, industrial use" }
       ],
-      image: "/furniture/mug.webp",
+      image: "/furniture/mug.webp"
     },
     {
       id: "pallet",
@@ -482,16 +481,16 @@ export default function FurnitureItemsSection() {
         "Designed for heavy-duty industrial and pharmaceutical applications",
         "Available in different sizes and load capacities",
         "Smooth surface for hygienic handling",
-        "Stackable and compatible with forklifts and pallet jacks",
+        "Stackable and compatible with forklifts and pallet jacks"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Load Capacity", value: "500kg to 2000kg" },
         { label: "Surface Finish", value: "Matte or mirror polish" },
         { label: "Dimensions", value: "Customized as per requirement" },
-        { label: "Usage", value: "Pharmaceutical, cleanroom, food industry" },
+        { label: "Usage", value: "Pharmaceutical, cleanroom, food industry" }
       ],
-      image: "/furniture/pallet.webp",
+      image: "/furniture/pallet.webp"
     },
     {
       id: "petristand",
@@ -504,16 +503,16 @@ export default function FurnitureItemsSection() {
         "Compact and stackable design for efficient space utilization",
         "Multiple slots for holding petri dishes securely",
         "Smooth edges for safe handling",
-        "Available in different capacities to accommodate various needs",
+        "Available in different capacities to accommodate various needs"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Capacity", value: "Holds 10 to 50 petri dishes" },
         { label: "Surface Finish", value: "Mirror or matte finish" },
         { label: "Dimensions", value: "Custom sizes available" },
-        { label: "Usage", value: "Microbiology, pharmaceutical, laboratory applications" },
+        { label: "Usage", value: "Microbiology, pharmaceutical, laboratory applications" }
       ],
-      image: "/furniture/petristand.webp",
+      image: "/furniture/petristand.webp"
     },
     {
       id: "platformtrolley",
@@ -524,24 +523,24 @@ export default function FurnitureItemsSection() {
       features: [
         "High-grade stainless steel (SS 304/316) construction",
 
-        "Stable and slip-resistant steps for safety",
+"Stable and slip-resistant steps for safety",
 
-        "Ergonomic handrails for secure grip",
+"Ergonomic handrails for secure grip",
 
-        "Smooth-rolling caster wheels with locking mechanism",
+"Smooth-rolling caster wheels with locking mechanism",
 
-        "Corrosion-resistant and easy to maintain",
+"Corrosion-resistant and easy to maintain",
 
-        "Available in various heights and step configurations",
+"Available in various heights and step configurations",
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Load Capacity", value: "100 kg to 500 kg" },
         { label: "Surface Finish", value: "Mirror or matte finish" },
         { label: "Wheel Type", value: "Swivel caster wheels with brakes" },
-        { label: "Dimensions", value: "Custom sizes available" },
+        { label: "Dimensions", value: "Custom sizes available" }
       ],
-      image: "/furniture/platformtrolley.webp",
+      image: "/furniture/platformtrolley.webp"
     },
     {
       id: "scoop",
@@ -554,16 +553,16 @@ export default function FurnitureItemsSection() {
         "Corrosion and rust-resistant",
         "Available in different sizes and capacities",
         "Ergonomic handle for comfortable grip",
-        "GMP-compliant for pharmaceutical applications",
+        "GMP-compliant for pharmaceutical applications"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Capacity", value: "50 ml to 5 L" },
         { label: "Surface Finish", value: "Mirror or matte finish" },
         { label: "Handle Type", value: "Ergonomic, non-slip grip" },
-        { label: "Applications", value: "Pharmaceutical, Food, Chemical industries" },
+        { label: "Applications", value: "Pharmaceutical, Food, Chemical industries" }
       ],
-      image: "/furniture/scoop.jpg",
+      image: "/furniture/scoop.jpg"
     },
     {
       id: "sopstand",
@@ -576,7 +575,7 @@ export default function FurnitureItemsSection() {
         "Ergonomic height for convenient document viewing",
         "Corrosion-resistant and easy to clean",
         "Available in various sizes and configurations",
-        "Customizable options to accommodate different document formats",
+        "Customizable options to accommodate different document formats"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -584,10 +583,10 @@ export default function FurnitureItemsSection() {
         { label: "Base Type", value: "Flat or weighted for stability" },
         { label: "Surface Finish", value: "Matte / Mirror finish" },
         { label: "Mounting", value: "Freestanding or wall-mounted options" },
-        { label: "Customization", value: "Available upon request" },
+        { label: "Customization", value: "Available upon request" }
       ],
-      image: "/furniture/sopstand.jpeg",
-    },
+      image: "/furniture/sopstand.jpeg"
+},
 
     {
       id: "spatulla",
@@ -600,16 +599,16 @@ export default function FurnitureItemsSection() {
         "Corrosion and rust-resistant",
         "Available in various sizes and shapes",
         "GMP and FDA-compliant",
-        "Ideal for pharmaceutical, chemical, and food applications",
+        "Ideal for pharmaceutical, chemical, and food applications"
       ],
       specifications: [
         { label: "Material", value: "SS 304/316" },
         { label: "Length", value: "6 inches to 12 inches" },
         { label: "Surface Finish", value: "Mirror or matte finish" },
         { label: "Handle Type", value: "Flat or ergonomic grip" },
-        { label: "Applications", value: "Pharmaceutical, Laboratory, Food industries" },
+        { label: "Applications", value: "Pharmaceutical, Laboratory, Food industries" }
       ],
-      image: "/furniture/spatula.jpg",
+      image: "/furniture/spatula.jpg"
     },
     {
       id: "ss&mspallettruck",
@@ -622,7 +621,7 @@ export default function FurnitureItemsSection() {
         "Ergonomic handle for comfortable operation",
         "Smooth and efficient hydraulic lifting system",
         "Corrosion-resistant stainless steel variant for cleanroom applications",
-        "Heavy-duty wheels for easy maneuverability",
+        "Heavy-duty wheels for easy maneuverability"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / MS" },
@@ -630,11 +629,11 @@ export default function FurnitureItemsSection() {
         { label: "Fork Length", value: "900mm to 1500mm" },
         { label: "Fork Width", value: "520mm to 685mm" },
         { label: "Wheel Type", value: "Nylon / Polyurethane / Rubber" },
-        { label: "Lift Height", value: "85mm to 200mm" },
+        { label: "Lift Height", value: "85mm to 200mm" }
       ],
-      image: "/furniture/ss&mspallettruck.webp",
+      image: "/furniture/ss&mspallettruck.webp"
     },
-
+    
     {
       id: "sscontainer",
       name: "SS Container",
@@ -646,16 +645,16 @@ export default function FurnitureItemsSection() {
         "Leak-proof and airtight sealing options",
         "Polished mirror finish for easy cleaning",
         "Available in various sizes and capacities",
-        "Stackable and space-efficient design",
+        "Stackable and space-efficient design"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
         { label: "Capacity", value: "5L to 200L" },
         { label: "Surface Finish", value: "Mirror polished or matte finish" },
         { label: "Lid Type", value: "Airtight / Clamp / Screw type" },
-        { label: "Usage", value: "Pharmaceutical, Food, Industrial, Laboratory" },
+        { label: "Usage", value: "Pharmaceutical, Food, Industrial, Laboratory" }
       ],
-      image: "/furniture/containers.webp",
+      image: "/furniture/containers.webp"
     },
     {
       id: "stool",
@@ -668,16 +667,16 @@ export default function FurnitureItemsSection() {
         "Sturdy, stable, and durable design",
         "Available with or without backrest",
         "Non-slip rubber feet for enhanced safety",
-        "Lightweight and easy to move",
+        "Lightweight and easy to move"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
         { label: "Height", value: "18 to 30 inches (adjustable options available)" },
         { label: "Surface Finish", value: "Mirror / Matte finish" },
         { label: "Seat Type", value: "Round / Square / Perforated" },
-        { label: "Leg Type", value: "Four-legged / Adjustable height / Fixed height" },
+        { label: "Leg Type", value: "Four-legged / Adjustable height / Fixed height" }
       ],
-      image: "/furniture/stool.jpg",
+      image: "/furniture/stool.jpg"
     },
     {
       id: "table",
@@ -690,7 +689,7 @@ export default function FurnitureItemsSection() {
         "Available with or without undershelves",
         "Customizable sizes and designs",
         "Corrosion-resistant and durable",
-        "Sturdy legs with anti-slip feet",
+        "Sturdy legs with anti-slip feet"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -698,9 +697,9 @@ export default function FurnitureItemsSection() {
         { label: "Surface Finish", value: "Matte / Mirror finish" },
         { label: "Load Capacity", value: "Up to 200 kg" },
         { label: "Leg Type", value: "Fixed / Adjustable height" },
-        { label: "Additional Features", value: "Optional drawers, wheels, or shelves" },
+        { label: "Additional Features", value: "Optional drawers, wheels, or shelves" }
       ],
-      image: "/furniture/table.jpeg",
+      image: "/furniture/table.jpeg"
     },
     {
       id: "toolbox",
@@ -713,7 +712,7 @@ export default function FurnitureItemsSection() {
         "Multiple compartments for tool organization",
         "Secure locking mechanism",
         "Portable with ergonomic handle",
-        "Customizable sizes and layouts",
+        "Customizable sizes and layouts"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -721,9 +720,9 @@ export default function FurnitureItemsSection() {
         { label: "Finish", value: "Matte / Mirror finish" },
         { label: "Locking System", value: "Key or combination lock" },
         { label: "Handle Type", value: "Ergonomic stainless steel handle" },
-        { label: "Additional Features", value: "Optional removable trays and dividers" },
+        { label: "Additional Features", value: "Optional removable trays and dividers" }
       ],
-      image: "/furniture/tool.jpg",
+      image: "/furniture/tool.jpg"
     },
     {
       id: "transportationtrolley",
@@ -736,7 +735,7 @@ export default function FurnitureItemsSection() {
         "Smooth-rolling swivel casters with brakes",
         "Ergonomic push handles for easy maneuvering",
         "Multiple shelf options for optimized storage",
-        "Customizable sizes and configurations",
+        "Customizable sizes and configurations"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -744,9 +743,9 @@ export default function FurnitureItemsSection() {
         { label: "Number of Shelves", value: "1 to 4 (as per requirement)" },
         { label: "Wheel Type", value: "PU / Rubber / Stainless Steel with brakes" },
         { label: "Dimensions", value: "Customizable (Standard: 900mm x 600mm x 900mm)" },
-        { label: "Finish", value: "Matte / Mirror finish" },
+        { label: "Finish", value: "Matte / Mirror finish" }
       ],
-      image: "/furniture/transportationtrolley.jpeg",
+      image: "/furniture/transportationtrolley.jpeg"
     },
     {
       id: "tray",
@@ -759,7 +758,7 @@ export default function FurnitureItemsSection() {
         "Smooth, polished surface for easy cleaning",
         "Available in various sizes and depths",
         "Stackable design for efficient storage",
-        "Customizable with perforations or dividers",
+        "Customizable with perforations or dividers"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -767,9 +766,9 @@ export default function FurnitureItemsSection() {
         { label: "Size", value: "Standard and custom sizes available" },
         { label: "Surface Finish", value: "Matte / Mirror finish" },
         { label: "Perforation", value: "Available upon request" },
-        { label: "Handles", value: "Optional side handles for easy grip" },
+        { label: "Handles", value: "Optional side handles for easy grip" }
       ],
-      image: "/furniture/tray.jpg",
+      image: "/furniture/tray.jpg"
     },
     {
       id: "ampoulestray",
@@ -782,7 +781,7 @@ export default function FurnitureItemsSection() {
         "Corrosion-resistant and easy to clean",
         "Customizable slot sizes and configurations",
         "Stackable design for efficient storage",
-        "Available with or without perforations",
+        "Available with or without perforations"
       ],
       specifications: [
         { label: "Material", value: "SS 304 / SS 316" },
@@ -790,56 +789,57 @@ export default function FurnitureItemsSection() {
         { label: "Size", value: "Standard and custom sizes available" },
         { label: "Surface Finish", value: "Matte / Mirror finish" },
         { label: "Slot Configuration", value: "Customizable based on ampoule size" },
-        { label: "Handles", value: "Optional side handles for easy handling" },
+        { label: "Handles", value: "Optional side handles for easy handling" }
       ],
-      image: "/furniture/ampoulestray.webp",
-    },
-    {
-      id: "wallguard",
-      name: "Wall Guard",
-      description:
-        "Our Wall Guards provide superior protection for walls in pharmaceutical, healthcare, and industrial environments. Designed to prevent damage from impact, these guards enhance safety and durability.",
-      features: [
-        "Made from high-quality stainless steel or PVC",
-        "Impact-resistant and corrosion-proof design",
-        "Easy to install and maintain",
-        "Customizable lengths and finishes",
-        "Smooth surface for hygienic applications",
-        "Available in various profiles and thicknesses",
-      ],
-      specifications: [
-        { label: "Material", value: "SS 304 / SS 316 / PVC" },
-        { label: "Thickness", value: "1mm to 3mm (customizable)" },
-        { label: "Length", value: "Standard and custom lengths available" },
-        { label: "Finish", value: "Brushed / Mirror / Matte" },
-        { label: "Mounting", value: "Adhesive or screw-mounted options" },
-        { label: "Application", value: "Hospitals, laboratories, cleanrooms, and industries" },
-      ],
-      image: "/furniture/wallguard.jpeg",
-    },
-    {
-      id: "stirir",
-      name: "GMP Model Stirrer",
-      description:
-        "Our GMP Model Stirrer is designed for precise and efficient mixing in pharmaceutical, biotech, and food processing industries. Built to meet Good Manufacturing Practices (GMP) standards, it ensures contamination-free and uniform stirring.",
-      features: [
-        "GMP-compliant design for hygienic operations",
-        "High-efficiency motor for consistent performance",
-        "Variable speed control for precision mixing",
-        "Corrosion-resistant stainless steel construction",
-        "Easy-to-clean and maintain structure",
-        "Available in multiple capacities and configurations",
-      ],
-      specifications: [
-        { label: "Material", value: "SS 304 / SS 316" },
-        { label: "Motor Power", value: "0.5 HP to 5 HP (customizable)" },
-        { label: "Speed Range", value: "100 RPM to 1500 RPM" },
-        { label: "Control System", value: "Digital / Analog speed controller" },
-        { label: "Mounting Type", value: "Portable / Fixed / Wall-mounted" },
-        { label: "Application", value: "Pharmaceutical, biotech, food, and chemical industries" },
-      ],
-      image: "/furniture/gmpmodelstirir.webp",
-    },
+      image: "/furniture/ampoulestray.webp"
+},
+{
+  id: "wallguard",
+  name: "Wall Guard",
+  description:
+    "Our Wall Guards provide superior protection for walls in pharmaceutical, healthcare, and industrial environments. Designed to prevent damage from impact, these guards enhance safety and durability.",
+  features: [
+    "Made from high-quality stainless steel or PVC",
+    "Impact-resistant and corrosion-proof design",
+    "Easy to install and maintain",
+    "Customizable lengths and finishes",
+    "Smooth surface for hygienic applications",
+    "Available in various profiles and thicknesses"
+  ],
+  specifications: [
+    { label: "Material", value: "SS 304 / SS 316 / PVC" },
+    { label: "Thickness", value: "1mm to 3mm (customizable)" },
+    { label: "Length", value: "Standard and custom lengths available" },
+    { label: "Finish", value: "Brushed / Mirror / Matte" },
+    { label: "Mounting", value: "Adhesive or screw-mounted options" },
+    { label: "Application", value: "Hospitals, laboratories, cleanrooms, and industries" }
+  ],
+  image: "/furniture/wallguard.jpeg"
+},
+{
+  id: "stirir",
+  name: "GMP Model Stirrer",
+  description:
+    "Our GMP Model Stirrer is designed for precise and efficient mixing in pharmaceutical, biotech, and food processing industries. Built to meet Good Manufacturing Practices (GMP) standards, it ensures contamination-free and uniform stirring.",
+  features: [
+    "GMP-compliant design for hygienic operations",
+    "High-efficiency motor for consistent performance",
+    "Variable speed control for precision mixing",
+    "Corrosion-resistant stainless steel construction",
+    "Easy-to-clean and maintain structure",
+    "Available in multiple capacities and configurations"
+  ],
+  specifications: [
+    { label: "Material", value: "SS 304 / SS 316" },
+    { label: "Motor Power", value: "0.5 HP to 5 HP (customizable)" },
+    { label: "Speed Range", value: "100 RPM to 1500 RPM" },
+    { label: "Control System", value: "Digital / Analog speed controller" },
+    { label: "Mounting Type", value: "Portable / Fixed / Wall-mounted" },
+    { label: "Application", value: "Pharmaceutical, biotech, food, and chemical industries" }
+  ],
+  image: "/furniture/gmpmodelstirir.webp"
+},
+   
   ]
 
   const nextSlide = () => {
@@ -852,32 +852,53 @@ export default function FurnitureItemsSection() {
 
   // Touch event handlers for swipe functionality
   const handleTouchStart = (e: TouchEvent) => {
+    // Store the initial touch position
     touchStartX.current = e.touches[0].clientX
+    isSwiping.current = false
   }
 
   const handleTouchMove = (e: TouchEvent) => {
+    // Store the current touch position
     touchEndX.current = e.touches[0].clientX
+    
+    // Check if we're in a tab content area
+    const target = e.target as HTMLElement
+    const tabContent = findParentWithClass(target, 'overflow-auto')
+    
+    // If we're in tab content and scrolling vertically, don't interfere
+    if (tabContent) {
+      // Don't do anything - let the browser handle the scroll
+      return
+    }
+    
+    // Otherwise, we're swiping horizontally
+    isSwiping.current = true
+    
+    // Prevent default to avoid page scrolling while swiping
+    if (Math.abs((touchStartX.current || 0) - (touchEndX.current || 0)) > 10) {
+      e.preventDefault()
+    }
   }
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStartX.current || !touchEndX.current) return
-
+    
     // Get the element that was touched
     const target = e.target as HTMLElement
-
+    
     // Check if we're inside a scrollable tab content
-    const isInTabContent = target.closest(".tabs-content") !== null
-
-    // If we're in tab content, allow normal scrolling behavior
-    if (isInTabContent) {
+    const tabContent = findParentWithClass(target, 'overflow-auto')
+    
+    // If we're in tab content, don't trigger swipe
+    if (tabContent || !isSwiping.current) {
       touchStartX.current = null
       touchEndX.current = null
       return
     }
-
+    
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
-
+    
     if (difference > minSwipeDistance) {
       // Swipe left, go to next slide
       nextSlide()
@@ -885,10 +906,23 @@ export default function FurnitureItemsSection() {
       // Swipe right, go to previous slide
       prevSlide()
     }
-
+    
     // Reset touch positions
     touchStartX.current = null
     touchEndX.current = null
+    isSwiping.current = false
+  }
+  
+  // Helper function to find parent with a specific class
+  const findParentWithClass = (element: HTMLElement | null, className: string): HTMLElement | null => {
+    let currentElement = element
+    while (currentElement) {
+      if (currentElement.classList && currentElement.classList.contains(className)) {
+        return currentElement
+      }
+      currentElement = currentElement.parentElement
+    }
+    return null
   }
 
   const handleQuoteRequest = (itemName: string) => {
@@ -954,7 +988,7 @@ export default function FurnitureItemsSection() {
                           <TabsTrigger value="features">Features</TabsTrigger>
                           <TabsTrigger value="specifications">Specifications</TabsTrigger>
                         </TabsList>
-                        <TabsContent value="features" className="mt-4 tabs-content">
+                        <TabsContent value="features" className="mt-4 overflow-auto max-h-[300px]">
                           <Card>
                             <CardContent className="pt-6">
                               <ul className="space-y-2">
@@ -968,7 +1002,7 @@ export default function FurnitureItemsSection() {
                             </CardContent>
                           </Card>
                         </TabsContent>
-                        <TabsContent value="specifications" className="mt-4 tabs-content">
+                        <TabsContent value="specifications" className="mt-4 overflow-auto max-h-[300px]">
                           <Card>
                             <CardContent className="pt-6">
                               <div className="grid gap-2">
@@ -1014,4 +1048,3 @@ export default function FurnitureItemsSection() {
     </section>
   )
 }
-

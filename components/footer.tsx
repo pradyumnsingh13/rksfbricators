@@ -44,26 +44,14 @@ export default function Footer() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link href="/about" className="text-blue-200 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
+              
               <li>
                 <Link href="#equipment" className="text-blue-200 hover:text-white transition-colors">
                   Equipment
                 </Link>
               </li>
-              <li>
-                <Link href="/products" className="text-blue-200 hover:text-white transition-colors">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-blue-200 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
+              
+              
               <li>
                 <Link href="#contact" className="text-blue-200 hover:text-white transition-colors">
                   Contact Us
