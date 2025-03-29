@@ -365,12 +365,25 @@ export default function EquipmentSection() {
     touchEndX.current = e.touches[0].clientX
   }
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStartX.current || !touchEndX.current) return
-
+    
+    // Get the element that was touched
+    const target = e.target as HTMLElement
+    
+    // Check if we're inside a scrollable tab content
+    const isInTabContent = target.closest('.tab-content') !== null
+    
+    // If we're in tab content, allow normal scrolling behavior
+    if (isInTabContent) {
+      touchStartX.current = null
+      touchEndX.current = null
+      return
+    }
+    
     const difference = touchStartX.current - touchEndX.current
     const minSwipeDistance = 50 // Minimum swipe distance in pixels
-
+    
     if (difference > minSwipeDistance) {
       // Swipe left, go to next slide
       nextSlide()
@@ -378,7 +391,7 @@ export default function EquipmentSection() {
       // Swipe right, go to previous slide
       prevSlide()
     }
-
+    
     // Reset touch positions
     touchStartX.current = null
     touchEndX.current = null
