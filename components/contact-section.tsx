@@ -92,7 +92,7 @@ export default function ContactSection() {
                   <MapPin className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-900">Address</p>
-                    <p className="text-gray-700">123 Industrial Area, Phase 2, New Delhi - 110001, India</p>
+                    <p className="text-gray-700">Plot No.136-B, EPIP,Phase-1,Jharmajri,Baddi,H.P.</p>
                   </div>
                 </div>
 
@@ -102,7 +102,7 @@ export default function ContactSection() {
                     <p className="font-medium text-gray-900">Phone</p>
                     <p className="text-gray-700">
                       <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">
-                        +91 98765 43210
+                        +91 98162 73955
                       </a>
                     </p>
                   </div>
@@ -149,7 +149,7 @@ export default function ContactSection() {
                     <label htmlFor="name" className="text-sm font-medium text-gray-700">
                       Your Name
                     </label>
-                    <Input id="name" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
+                    <Input id="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
                   </div>
 
                   <div className="space-y-2">
@@ -159,7 +159,7 @@ export default function ContactSection() {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="yourname@example.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
