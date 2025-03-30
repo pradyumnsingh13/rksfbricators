@@ -79,8 +79,6 @@ function SearchBar() {
     { id: "wallguard", name: "Wall Guard", type: "furniture" },
     { id: "stirir", name: "GMP Model Stirir", type: "furniture" },
 
-
-
     // Tanks
     { id: "storage-tank", name: "Storage Tank", type: "tank" },
     { id: "manufacturing-tank-1", name: "Manufacturing Tank 1", type: "tank" },
@@ -406,13 +404,13 @@ export default function MainNav() {
                     Compact tool storage
                   </ListItem>
                   <ListItem title="Ampoules Tray" href="#ampoulestray">
-                  Secure ampoule handling
+                    Secure ampoule handling
                   </ListItem>
                   <ListItem title="Wall Guard" href="#wallguard">
-                  Protective wall barrier
+                    Protective wall barrier
                   </ListItem>
                   <ListItem title="GMP Model Stirir" href="#stirir">
-                  Hygienic precision mixing
+                    Hygienic precision mixing
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -474,7 +472,7 @@ export default function MainNav() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="overflow-y-auto">
+          <SheetContent side="right" className="overflow-y-auto max-h-screen">
             <nav className="flex flex-col gap-4 mt-8">
               <Link href="/" className="text-lg font-medium">
                 Home
@@ -484,21 +482,26 @@ export default function MainNav() {
               </Link>
               <div className="border-t pt-2">
                 <p className="font-semibold mb-2">Pharmaceuticals Equipments</p>
-                <div className="grid grid-cols-2 gap-1 text-sm pl-2">
+                <div className="grid grid-cols-2 gap-1 text-sm pl-2 max-h-48 overflow-y-auto">
                   <Link href="#air-shower">Air Shower</Link>
                   <Link href="#mist-shower">Mist Shower</Link>
+                  <Link href="#dedusting-tunnel">Dedusting Tunnel</Link>
                   <Link href="#vertical-laf">Vertical LAF</Link>
-                  <Link href="#autoclave">Autoclave</Link>
+                  <Link href="#laf-workbench">LAF Workbench</Link>
+                  <Link href="#mobile-laf-trolley">Mobile LAF Trolley</Link>
+                  <Link href="#sampling-dispensing-booth">Sampling & Dispensing</Link>
+                  <Link href="#static-dynamic-passbox">Static & Dynamic Passbox</Link>
                   <Link href="#biosafety-tank">Biosafety Tank</Link>
                   <Link href="#pressure-vessel">Pressure Vessel</Link>
-                  <Link href="#conveyor">Conveyor</Link>
-                  <Link href="#mixer">Mixer</Link>
-                  <Link href="#blender">Blender</Link>
+                  <Link href="#conveyor">Conveyor Systems</Link>
+                  <Link href="#mixer">Industrial Mixers</Link>
+                  <Link href="#blender">Pharmaceutical Blenders</Link>
+                  <Link href="#autoclave">Pharmaceutical Autoclave</Link>
                 </div>
               </div>
               <div className="border-t pt-2">
                 <p className="font-semibold mb-2">Furniture Items</p>
-                <div className="grid grid-cols-2 gap-1 text-sm pl-2">
+                <div className="grid grid-cols-2 gap-1 text-sm pl-2 max-h-60 overflow-y-auto">
                   <Link href="#crossover-bench">Crossover Bench</Link>
                   <Link href="#ss-locker">SS Locker</Link>
                   <Link href="#ms-locker">MS Locker</Link>
@@ -513,6 +516,30 @@ export default function MainNav() {
                   <Link href="#sink-table">Sink Table</Link>
                   <Link href="#storage-solutions">Storage Solutions</Link>
                   <Link href="#lab-accessories">Lab Accessories</Link>
+                  <Link href="#almirah">Almirah</Link>
+                  <Link href="#cagetrolley">Cage Trolley</Link>
+                  <Link href="#chair">Chair</Link>
+                  <Link href="#diepunchcabinet">Diepunch Cabinet</Link>
+                  <Link href="#dustbin">Dustbin</Link>
+                  <Link href="#IPC">IPC</Link>
+                  <Link href="#linentrolley">Linen Trolley</Link>
+                  <Link href="#mug">Mug</Link>
+                  <Link href="#pallet">Pallet</Link>
+                  <Link href="#petristand">Petri Stand</Link>
+                  <Link href="#platformtrolley">Platform Trolley</Link>
+                  <Link href="#scoop">Scoop</Link>
+                  <Link href="#sopstand">SOP Stand</Link>
+                  <Link href="#spatulla">Spatulla</Link>
+                  <Link href="#ss&mspallettruck">SS & MS Pallet Truck</Link>
+                  <Link href="#sscontainer">SS Container</Link>
+                  <Link href="#stool">Stool</Link>
+                  <Link href="#table">Table</Link>
+                  <Link href="#toolbox">Tool Box</Link>
+                  <Link href="#transportationtrolley">Transportation Trolley</Link>
+                  <Link href="#tray">Tray</Link>
+                  <Link href="#ampoulestray">Ampoules Tray</Link>
+                  <Link href="#wallguard">Wall Guard</Link>
+                  <Link href="#stirir">GMP Model Stirir</Link>
                 </div>
               </div>
               <div className="border-t pt-2">
