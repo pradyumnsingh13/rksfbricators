@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
 type Equipment = {
@@ -346,7 +346,6 @@ export default function EquipmentSection() {
       ],
       image: "/equipment/autoclave.webp",
     },
-    
   ]
 
   const nextSlide = () => {
@@ -506,13 +505,13 @@ export default function EquipmentSection() {
             </div>
           </div>
 
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center mt-8 gap-2 flex-wrap">
             {equipment.map((_, index) => (
               <button
                 key={index}
                 className={`h-3 w-3 rounded-full transition-colors ${
                   index === activeIndex ? "bg-blue-600" : "bg-gray-300"
-                }`}
+                } m-1`}
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -523,3 +522,4 @@ export default function EquipmentSection() {
     </section>
   )
 }
+
