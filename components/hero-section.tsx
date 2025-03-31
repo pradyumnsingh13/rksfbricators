@@ -12,6 +12,8 @@ export default function HeroSection() {
     "/equipment/air-shower.webp",
     "/equipment/passbox.jpeg",
     "/equipment/conveyor.jpeg",
+    "/tanks/wfijacketedtank.webp",
+    "/tanks/hotairdryer.webp",
   ]
 
   useEffect(() => {

@@ -400,22 +400,20 @@ export default function EquipmentSection() {
 
   // Enhance the request quote functionality for equipment items
   const handleQuoteRequest = (itemName: string) => {
-    const quoteRequest = {
-      to: ["rajnikantsharma@rksfabricatorsco.in", "rksfabricators@gmail.com"],
-      subject: `Quote Request for ${itemName}`,
-      body: `
-        I would like to request a quote for ${itemName}.
-        
-        Please provide pricing and availability information.
-      `,
-    }
+    // Create mailto URL with all parameters
+    const mailtoLink = `mailto:rajnikantsharma@rksfabricatorsco.in,rksfabricators@gmail.com?subject=${encodeURIComponent(
+      `Quote Request for ${itemName}`,
+    )}&body=${encodeURIComponent(
+      `I would like to request a quote for ${itemName}.\n\nPlease provide pricing and availability information.`,
+    )}`
 
-    console.log("Quote request would be sent to:", quoteRequest.to)
-    console.log("Quote request content:", quoteRequest.body)
+    // Open the email client
+    window.location.href = mailtoLink
 
+    // Show toast notification
     toast({
-      title: "Quote Request Sent",
-      description: `Your request for ${itemName} has been sent to rajnikantsharma@rksfabricatorsco.in and rksfabricators@gmail.com`,
+      title: "Email Client Opened",
+      description: `Your request for ${itemName} is ready to send. Please review and send from your email client.`,
     })
   }
 
