@@ -11,9 +11,22 @@ import Footer from "@/components/footer"
 import FurnitureItemsSection from "@/components/furniture-items-section"
 import TanksSection from "@/components/tanks-section"
 import { Download } from "lucide-react"
+import Head from 'next/head'
 
 export default function Home() {
   return (
+    <>
+    <Head>
+        <title>RKS Fabricators | Premium Lab Furniture & Pharma Equipment</title>
+        <meta
+          name="description"
+          content="RKS Fabricators is a trusted manufacturer of lab furniture, pharma and chemical equipment, based in Baddi. Explore our products and request a quote today."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+        <link rel="canonical" href="https://www.rksfabricators.com/" />
+      </Head>
     <div className="flex min-h-screen flex-col">
       <div className="bg-blue-950 text-white py-2">
         <div className="container flex flex-col sm:flex-row justify-between items-center text-sm">
@@ -62,6 +75,7 @@ export default function Home() {
       </main>
       <Footer />
     </div>
+    </>
   )
 }
 
