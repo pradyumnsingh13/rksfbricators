@@ -119,10 +119,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-green-400 flex-shrink-0" />
                 <a
-                  href="mailto:rajnikantsharma@rksfabricatorsco.in"
+                  href="mailto:rajnikantsharma@rksfabricators.com"
                   className="text-blue-200 hover:text-white transition-colors"
                 >
-                  rajnikantsharma@rksfabricatorsco.in
+                  rajnikantsharma@rksfabricators.com
                 </a>
                 
                 
@@ -130,10 +130,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-green-400 flex-shrink-0" />
                 <a
-                  href="mailto:shrikantsharma@rksfabricatorsco.in"
+                  href="mailto:shrikantsharma@rksfabricators.com"
                   className="text-blue-200 hover:text-white transition-colors"
                 >
-                  shrikantsharma@rksfabricatorsco.in
+                  shrikantsharma@rksfabricators.com
                 </a>
                 
                 

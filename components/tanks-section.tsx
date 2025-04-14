@@ -287,7 +287,7 @@ export default function TanksSection() {
   // Enhance the request quote functionality for equipment items
   const handleQuoteRequest = (itemName: string) => {
     // Create mailto URL with all parameters
-    const mailtoLink = `mailto:rksfabricators.com,rajnikantsharma@rksfabricatorsco.in?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:rksfabricators.com,rajnikantsharma@rksfabricators.com?subject=${encodeURIComponent(
       `Quote Request for ${itemName}`,
     )}&body=${encodeURIComponent(
       `I would like to request a quote for ${itemName}.\n\nPlease provide pricing and availability information.`,

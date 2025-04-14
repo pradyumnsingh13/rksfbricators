@@ -38,8 +38,8 @@ export default function Home() {
               <Download className="h-4 w-4" />
               <span>Company Catalog</span>
             </a>
-            <a href="mailto:rajnikantsharma@rksfabricatorsco.in" className="hover:text-blue-200 transition-colors">
-              rajnikantsharma@rksfabricatorsco.in
+            <a href="mailto:rajnikantsharma@rksfabricators.com" className="hover:text-blue-200 transition-colors">
+              rajnikantsharma@rksfabricators.com
             </a>
             <a href="mailto:rksfabricators@gmail.com" className="hover:text-blue-200 transition-colors">
               rksfabricators@gmail.com

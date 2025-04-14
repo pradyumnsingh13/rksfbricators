@@ -883,7 +883,7 @@ export default function FurnitureItemsSection() {
 
   const handleQuoteRequest = (itemName: string) => {
     // Create mailto URL with all parameters
-    const mailtoLink = `mailto:rajnikantsharma@rksfabricatorsco.in,rksfabricators@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:rajnikantsharma@rksfabricators.com,rksfabricators@gmail.com?subject=${encodeURIComponent(
       `Quote Request for ${itemName}`,
     )}&body=${encodeURIComponent(
       `I would like to request a quote for ${itemName}.\n\nPlease provide pricing and availability information.`,
