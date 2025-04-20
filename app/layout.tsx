@@ -8,11 +8,11 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RKS Fabricators - Excellence in Metal Fabrication & Pharmaceutical Equipment",
+  title: "RKS Fabricators | Baddi, Himachal Pradesh | Metal Fabrication & Pharma Equipment Experts",
   description:
-    "RKS Fabricators is a leading manufacturer of high-quality metal fabrication, clean room equipment, and pharmaceutical machinery including Air Showers, LAF systems, Autoclaves, and more.",
+    "RKS Fabricators, based in Baddi, Himachal Pradesh, is a trusted manufacturer of high-quality metal fabrication, clean room equipment, and pharmaceutical machinery like Air Showers, LAF systems, Autoclaves, and more.",
   keywords:
-    "metal fabrication, pharmaceutical equipment, clean room equipment, air shower, laminar air flow, autoclave, pressure vessel, biosafety tank, stainless steel fabrication",
+    "RKS Fabricators, Baddi fabricators, Himachal Pradesh fabrication company, metal fabrication Baddi, pharmaceutical equipment Baddi, clean room equipment, air shower, laminar air flow, autoclave, pressure vessel, stainless steel welding, pharma fabrication Baddi",
   authors: [{ name: "RKS Fabricators" }],
   creator: "RKS Fabricators",
   publisher: "RKS Fabricators",
@@ -20,16 +20,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://www.rksfabricators.com/",
-    title: "RKS Fabricators - Excellence in Metal Fabrication & Pharmaceutical Equipment",
+    title: "RKS Fabricators | Baddi's Metal & Pharma Equipment Specialists",
     description:
-      "Leading manufacturer of high-quality metal fabrication, clean room equipment, and pharmaceutical machinery.",
+      "Leading fabrication company in Baddi, Himachal Pradesh, manufacturing clean room and pharmaceutical equipment for pharma & industrial use.",
     siteName: "RKS Fabricators",
   },
   robots: {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
+  viewport: "width=device-width, initial-scale=1.0",
+    
 }
 
 export default function RootLayout({
